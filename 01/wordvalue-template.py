@@ -19,11 +19,12 @@ def max_word_value(words):
     of words as arg, if none provided uses default DICTIONARY"""
     counter = 0
 	for word in words:
-		if calc_word_value(word) > 0:
+		if calc_word_value(word) > counter:
 			counter = calc_word_value(word)
+	       		max_word = word
 		else:
 			continue
-	return counter
+	return "%s is the word with a max value of %s" % (max_word, counter)
 
 if __name__ == "__main__":
     pass # run unittests to validate
