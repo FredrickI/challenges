@@ -1,12 +1,8 @@
 from data import DICTIONARY, LETTER_SCORES
 
 def load_words():
-    dict = open(DICTIONARY, 'r+')
-    lst = []
-    for i in dict:
-        lst.append(i)
-    lst = [word.rstrip() for word in lst]
-    return lst
+    with open(DICTIONARY) as d:
+        return [word.rstrip() for word in d.read().split()]
     
 
 def calc_word_value(word):
