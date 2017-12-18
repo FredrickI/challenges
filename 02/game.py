@@ -55,10 +55,7 @@ def calc_word_value(word):
     return sum(LETTER_SCORES.get(char.upper(), 0) for char in word)
 
 
-# Below 2 functions pass through the same 'draw' argument (smell?).
-# Maybe you want to abstract this into a class?
-# get_possible_dict_words and _get_permutations_draw would be instance methods.
-# 'draw' would be set in the class constructor (__init__).
+
 def get_possible_dict_words(draw):
     """Get all possible words from draw which are valid dictionary words.
     Use the _get_permutations_draw helper and DICTIONARY constant"""
@@ -72,8 +69,7 @@ def get_possible_dict_words(draw):
 
 
 def _get_permutations_draw(draw):
-    """Helper for get_possible_dict_words to get all permutations of draw letters.
-    Hint: use itertools.permutations"""
+    """Helper for get_possible_dict_words to get all permutations of draw letters."""
     perm = itertools.permutations(draw)
     return perm
 
